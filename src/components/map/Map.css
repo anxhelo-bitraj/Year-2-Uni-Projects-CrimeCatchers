@@ -1,0 +1,146 @@
+/* =========================================
+   Apple-style frosted glass overlay (smaller)
+   ========================================= */
+.loading-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* above map & markers */
+
+  /* Slightly frosted glass */
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+
+  /* Make it smaller overall */
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  animation: overlay-fadein 0.25s ease-out;
+}
+
+@keyframes overlay-fadein {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Minimal iOS-like spinner */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #007aff; /* iOS system blue */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Marker cluster container is transparent */
+.marker-cluster-custom {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Circular cluster icon */
+.marker-cluster-pin {
+  background-color: #4db6f4;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Cluster count text */
+.marker-cluster-count {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Current location outer */
+.current-location {
+  background: transparent;
+}
+
+/* Current location dot */
+.current-location-inner {
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Crime markers */
+.crime-marker-inner {
+  width: 20px;
+  height: 20px;
+  background: #4db6f4;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+/* User-reported crime markers */
+.user-reported-marker-inner {
+  width: 20px;
+  height: 20px;
+  background: #ff4444;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Borough tooltip */
+.borough-tooltip {
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Custom tooltip */
+.custom-tooltip {
+  pointer-events: none;
+}
+
+/* Login overlay */
+.login-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: #fff;
+  border: 2px solid orange;
+  padding: 20px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
